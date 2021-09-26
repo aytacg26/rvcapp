@@ -1,0 +1,25 @@
+{
+  "name": "rvc",
+  "version": "1.0.0",
+  "description": "A React Video Chat Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "chat",
+    "react",
+    "react",
+    "app",
+    "video",
+    "chat"
+  ],
+  "author": "Aytaç GÜLEY",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13",
+    "socket.io": "^4.2.0"
+  }
+}
