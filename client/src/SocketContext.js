@@ -36,7 +36,7 @@ const ContextProvider = ({ children }) => {
     setCallAccepted(true);
     const peer = new Peer({ initiator: false, trickle: false, stream });
     peer.on('signal', (data) => {
-      socket.emit('answercall', { signal: data, to: call.from });
+      socket.emit('answerCall', { signal: data, to: call.from });
     });
 
     peer.on('stream', (currentStream) => {
@@ -50,7 +50,7 @@ const ContextProvider = ({ children }) => {
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
     peer.on('signal', (data) => {
-      socket.emit('calluser', {
+      socket.emit('callUser', {
         userToCall: id,
         signalData: data,
         from: me,
@@ -62,7 +62,7 @@ const ContextProvider = ({ children }) => {
       userVideo.current.srcObject = currentStream;
     });
 
-    socket.on('callaccepted', (signal) => {
+    socket.on('callAccepted', (signal) => {
       setCallAccepted(true);
       peer.signal(signal);
     });
